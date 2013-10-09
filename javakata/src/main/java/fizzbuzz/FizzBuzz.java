@@ -22,4 +22,12 @@ public class FizzBuzz {
     private boolean isFizzBuzz(int number) {
         return (isFizz(number) && isBuzz(number));
     }
+   
+    public static final void main(String[] args) {
+	FizzBuzz fizzerBuzzer = new FizzBuzz();
+	for (int i=1; i<=100; i++) {
+	    System.out.printf("%s\n", fizzerBuzzer.gives(i));
+	}
+    }
+
 }
