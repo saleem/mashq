@@ -1,6 +1,17 @@
 package fizzbuzz;
 
 public class FizzBuzz {
+    private int fizzFactor, buzzFactor;
+
+    public FizzBuzz(int fizzFactor, int buzzFactor) {
+	this.fizzFactor = fizzFactor;
+	this.buzzFactor = buzzFactor;
+    }
+
+    public FizzBuzz() {
+	this(3,5);
+    }
+
     public String gives(int number) {
         if (isFizzBuzz(number)) {
             return "FizzBuzz";
@@ -12,11 +23,11 @@ public class FizzBuzz {
     }
 
     private boolean isFizz(int number) {
-        return (number % 3 == 0);
+        return (number % fizzFactor == 0);
     }
 
     private boolean isBuzz(int number) {
-        return (number % 5 == 0);
+        return (number % buzzFactor == 0);
     }
 
     private boolean isFizzBuzz(int number) {
