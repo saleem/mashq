@@ -12,14 +12,10 @@ public class FizzBuzz {
 	this(3,5);
     }
 
-    public String gives(int number) {
-        if (isFizzBuzz(number)) {
-            return "FizzBuzz";
-	} else {
-            if (isFizz(number)) return "Fizz";
-            if (isBuzz(number)) return "Buzz";
-	}
-        return Integer.toString(number);
+    public String gives(int n) {
+	StringBuilder ret = new StringBuilder();
+	ret.append(isFizz(n) ? "Fizz" : "").append(isBuzz(n) ? "Buzz" : "").append(ret.length() == 0 ? Integer.toString(n) : "");
+	return ret.toString();
     }
 
     private boolean isFizz(int number) {
@@ -30,10 +26,6 @@ public class FizzBuzz {
         return (number % buzzFactor == 0);
     }
 
-    private boolean isFizzBuzz(int number) {
-        return (isFizz(number) && isBuzz(number));
-    }
-   
     public static final void main(String[] args) {
 	FizzBuzz fizzerBuzzer = new FizzBuzz();
 	for (int i=1; i<=100; i++) {
